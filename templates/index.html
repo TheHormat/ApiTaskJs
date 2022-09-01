@@ -1,0 +1,416 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Bootstrap CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>TASK</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="onepage">
+        <h1 style="margin: 30px">Qiymət təklifi yarat</h1>
+
+        <form id="regForm" method="POST" action="">
+          {% csrf_token %}
+
+          <div class="tab">
+            <!-- /* ###################################### Form STEP 1 ####################################################### */ -->
+            <div class="input_group">
+              <div class="input_box">
+                <p>{{ form.request_number.label }}</p>
+                {{ form.request_number }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.user_id.label }} <br /></p>
+                {{ form.user_id }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.datetime.label }}</p>
+                {{ form.datetime }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.valyuta.label }} <br /></p>
+                {{ form.valyuta }}
+              </div>
+            </div>
+          </div>
+
+          <div class="tab">
+            <!-- /* ###################################### Form STEP 2 ####################################################### */ -->
+            <div class="input_group">
+              <div class="input_box">
+                <p>{{ form.product.label }}</p>
+                {{ form.product }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.miqdar.label }}</p>
+                {{ form.miqdar }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.price.label }} <br /></p>
+                {{ form.price }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.edv_degree.label }}</p>
+                {{ form.edv_degree }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.edv_price.label }} <br /></p>
+                {{ form.edv_price }}
+              </div>
+            </div>
+          </div>
+
+          <div class="tab">
+            <!-- /* ###################################### Form STEP 3 ####################################################### */ -->
+            <div class="input_group">
+              <div class="input_box">
+                <p>{{ form.payment_terms.label }}</p>
+                {{ form.payment_terms }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.bank_account.label }} <br /></p>
+                {{ form.bank_account }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.discount.label }}</p>
+                {{ form.discount }}
+              </div>
+              <br />
+            </div>
+          </div>
+
+          <div class="tab">
+            <!-- /* ###################################### Form STEP 4 ####################################################### */ -->
+            <div class="input_group">
+              <div class="input_box">
+                <p>{{ form.delivery_condition.label }}</p>
+                {{ form.delivery_condition }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.country.label }} <br /></p>
+                {{ form.country }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.city.label }}</p>
+                {{ form.city }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.location.label }} <br /></p>
+                {{ form.location }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.zipcode.label }}</p>
+                {{ form.zipcode }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.delivery_date.label }} <br /></p>
+                {{ form.delivery_date }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.type_transport.label }} <br /></p>
+                {{ form.type_transport }}
+              </div>
+              <br />
+
+              <div class="input_box">
+                <p>{{ form.delivery_cost.label }}</p>
+                {{ form.delivery_cost }}
+              </div>
+              <br />
+            </div>
+          </div>
+          <br />
+
+          <div class="tab">
+            <!-- <li>
+              <button id="updatebtn">
+                Update <i class="fa-solid fa-arrow-down"></i
+                    >
+              </button>
+            </li> -->
+            <!-- /* ###################################### All Data ####################################################### */ -->
+            <div class="data">
+              <ul>
+                <br /><br />
+
+                <li>
+                  <p>
+                    <span
+                      >MƏHSUL <i class="fa-solid fa-arrow-right-long"></i
+                    ></span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Sorğu Nömrəsi
+                      <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Müştəri İD <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Təklifin qüvvədə olduğu müddət
+                      <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Valyuta <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Miqdar <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Vahidin qiyməti
+                      <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >ƏDV drərəcəsi
+                      <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >ƏDV məbləği <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Ödəniş şərti <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Bank hesabı <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Endirim <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Çatdırılma şərti
+                      <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Ölkə <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Şəhər <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Ünvan <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Zip kod <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Çatdırılma tarixi
+                      <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Çatdırılma xərci
+                      <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    <span
+                      >Nəqliyyat növü
+                      <i class="fa-solid fa-arrow-right-long"></i>
+                    </span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <br />
+
+          <!-- /* ###################################### Form Buttons ####################################################### */ -->
+          <div style="overflow: auto">
+            <div style="float: right">
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">
+                Previous
+              </button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)">
+                Next
+              </button>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 40px">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+          </div>
+        </form>
+      </div>
+
+      <!-- /* ###################################### TwoPage ####################################################### */ -->
+      <div class="twopage">
+        <ul>
+          <li>
+            <button class="btn active">1</button>
+            <p>Ümumi məlumatlar</p>
+          </li>
+          <li>
+            <button class="btn">2</button>
+            <p>Məhsullara dair məlumatlar</p>
+          </li>
+          <li>
+            <button class="btn">3</button>
+            <p>Ödəniş məlumatlar</p>
+          </li>
+          <li>
+            <button class="btn">4</button>
+            <p>Çatdırılma məlumatlar</p>
+          </li>
+          <li>
+            <button class="btn">5</button>
+            <p>Önbaxış</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Jquery CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- My JS -->
+    <script src="{% static 'js/app.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+body{
+    font-family: Raleway;
+}
+
+/* ########################## Buttons ############################################################ */
+#nextBtn{
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+}
+
+#updatebtn{
+    background-color: blueviolet;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+}
+
+#updatebtn a{
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+}
+
+#prevBtn{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid rgb(204, 197, 197);
+    margin: 30px;
+}
+
+#prevBtn a{
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+.btn{
+    background-color: rgb(191, 173, 206);
+    color: white;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
+
+/* ###################################################################################### */
+
+.twopage p{
+    margin-left: 10px;
+}
+
+.btn.active{
+    background-color: rgb(127, 13, 235);
+    color: white;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    border: none; 
+    border: none;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper{ 
+    display: flex;
+    justify-content: space-between;
+}
+
+.twopage{
+    width: 30%;
+    margin: 80px;
+}
+
+.twopage ul li {
+    display: flex;
+    padding: 20px;
+}
+
+/* ########################## Data ############################################################ */
+
+
+.data {
+    margin: 40px;
+}
+
+.data ul{
+    list-style: none;
+}
+
+.data ul li p{
+    color: black;
+}
+
+.data ul li p span{
+    color: rgb(211, 0, 253);
+}
+
+/* ############################################################################################# */
+
+
+
+/* ############################ Form ################################################################# */
+
+
+#regForm {
+    margin: 35px;
+    min-width: 300px;
+}
+
+.tab {
+    display: none;
+}
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step.active {
+    opacity: 1;
+}
+  
+.step.finish {
+    background-color: #04AA6D;
+}
+
+/* ############################################################################################# */
+
+
+
+
+
